@@ -1,0 +1,35 @@
+{
+  "name": "okcoder/think-jwt",
+  "type": "library",
+  "keywords": [
+    "thinkphp6",
+    "JWT"
+  ],
+  "description": "thinkphp6 jwt",
+  "autoload": {
+    "psr-4": {
+      "okcoder\\think\\jwt\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "OkCoder",
+      "email": "1046512080@qq.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "extra": {
+    "think": {
+      "config": {
+        "jwt": "src/config/jwt.php"
+      }
+    }
+  },
+  "require": {
+    "php": ">7.4",
+    "topthink/framework": "^6.0.0",
+    "lcobucci/jwt": "^4.1",
+    "ext-json": "*",
+    "ext-sodium": "*"
+  }
+}
