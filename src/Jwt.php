@@ -111,9 +111,9 @@ class Jwt
      * @throws TokenLogoutOffException
      * @throws TokenParseFailException
      */
-    public function parse($token): array
+    public static function parse($token): array
     {
-        $config = $this->getJwtConfig();
+        $config = self::getJwtConfig();
 
 
         //注销token逻辑
@@ -178,7 +178,7 @@ class Jwt
      * @param string $token 需要注销的token
      * @return void
      */
-    public function logout(string $token)
+    public static function logout(string $token)
     {
 
         //取缓存中注销的token数组
