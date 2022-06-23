@@ -46,7 +46,7 @@ class Jwt
      * @param integer|array|string $data 往token里面传入的数据
      * @return string|boolean 执行成功返回token字符串 ,失败返回false
      */
-    public static function create($data)
+    public static function create($data, int $exp = 0)
     {
         try {
             $config = self::getJwtConfig();
@@ -65,7 +65,7 @@ class Jwt
                 //生效时间（立即生效:签发时间减一秒）
                 ->canOnlyBeUsedAfter($now->modify('-1 second'))
                 //过期时间
-                ->expiresAt($now->modify("+" . Config::get('jwt.exp') . " second"))
+                ->expiresAt($now->modify("+" . ($exp ?: Config::get('jwt.exp')) . " second"))
                 //存在token中的数据   // with方法在4.x中将会被移除被withClaim替代
                 ->withClaim('_thinkJwt', json_encode($data, JSON_UNESCAPED_SLASHES + JSON_UNESCAPED_UNICODE))
                 //签名

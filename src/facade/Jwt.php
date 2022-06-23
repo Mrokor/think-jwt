@@ -3,7 +3,7 @@
 namespace okcoder\think\jwt\facade;
 /**
  * Class Jwt
- * @method static \okcoder\think\jwt\Jwt create(integer|array|string $data)
+ * @method static \okcoder\think\jwt\Jwt create(integer|array|string $data, int $exp = 0)
  * @method static \okcoder\think\jwt\Jwt getToken()
  * @method static \okcoder\think\jwt\Jwt parse(string $token)
  * @method static \okcoder\think\jwt\Jwt logout(string $token)
