@@ -78,7 +78,7 @@ class Jwt
     }
 
 
-    public static function getToken()
+    public static function getToken(): string
     {
         $chains = [
             'header' => new Header(),
